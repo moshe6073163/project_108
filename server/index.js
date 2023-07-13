@@ -30,7 +30,12 @@ async function insertData(client){
                 .then(() => {
                     console.log("Success sending data");
                     cmd.close();
-                    client.emit('getData', answers);
+                    if(answers.Altitude >= 0 && answers.Altitude <= 3000 &&
+                       answers.HIS >= 0 && answers.HIS <= 360 &&
+                       answers.ADI >= -100 && answers.ADI <= 100
+                       ){
+                        return client.emit('getData', answers);
+                       }
                 })
             })
         })
