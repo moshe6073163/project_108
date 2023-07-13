@@ -1,0 +1,17 @@
+{
+    "name": "project-108-program",
+    "version": "1.0.0",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.1.4",
+        "socket.io": "^4.7.1"
+    },
+    "devDependencies": {
+        "press-any-key": "^0.1.1"
+    }
+}
