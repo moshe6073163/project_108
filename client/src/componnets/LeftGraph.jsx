@@ -6,7 +6,7 @@ export default function LeftGraph({data}) {
     {/* {data &&  */}
     <div className='col-3'>
         <div className='col-12 d-flex justify-content-center' >
-            <div className='col-1 rounded shadow d-flex flex-column align-items-center' style={{height: '300px', position: 'absolute', backgroundColor: 'white'}}>
+            <div className='rounded shadow d-flex flex-column align-items-center' style={{height: '300px', width: '100px', position: 'absolute', backgroundColor: 'white'}}>
                 <div className='h-25'>3000</div>
                 <div className='h-25'>2000</div>
                 <div className='h-25'>1000</div>
