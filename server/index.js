@@ -1,6 +1,5 @@
 import http  from 'http';
 import readLine  from 'readline';
-const cmd = readLine.createInterface(process.stdin, process.stdout);
 const server = http.createServer();
 import dotnev from 'dotenv';
 import * as socketIo from 'socket.io';
@@ -15,8 +14,9 @@ const io = new socketIo.Server(server, {
 })
 
 
-async function insertData(client){
+function insertData(client){
     let answers = {};
+    const cmd = readLine.createInterface(process.stdin, process.stdout);
     cmd.question("Please enter Altitude \n", (ans)=>{
         answers.Altitude = ans;
 
@@ -35,7 +35,7 @@ async function insertData(client){
                        answers.ADI >= -100 && answers.ADI <= 100
                        ){
                         return client.emit('getData', answers);
-                       }
+                       } else return;
                 })
             })
         })
@@ -45,8 +45,8 @@ async function insertData(client){
 
 io.on('connection', async(client)=>{
 
-    client.on('setData', async ()=>{
-        await insertData(client);
+    client.on('setData', ()=>{
+        insertData(client);
     })
 
     client.on('disconnect', () =>{
