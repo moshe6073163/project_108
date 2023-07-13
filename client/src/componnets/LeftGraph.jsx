@@ -14,7 +14,7 @@ export default function LeftGraph({data}) {
             </div>
         </div>
         <div className='col-12 d-flex justify-content-center'>
-            <div className='col-8' style={{backgroundColor:'rgba(255, 0, 0, .7)', height: '15px',position: 'relative', top: `${(data * 0.07736)}px`}}>{}</div>
+            <div className='col-8' style={{backgroundColor:'rgba(255, 0, 0, .7)', height: '15px',position: 'relative', top: `${(data * 0.07736)}px`, transition: '2s'}}>{}</div>
         </div>
     </div>
         {/* } */}
